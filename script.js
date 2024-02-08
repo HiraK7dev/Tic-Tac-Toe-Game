@@ -20,8 +20,18 @@ btn8.className = `btn`;
 let hd = document.querySelectorAll(".horizentalDiv");   //hd = horizentalDiv
 let playerTurn = document.querySelector("#playerTurn");
 let reload = document.querySelector("#reload"); //reload button
+let scoreX = document.querySelector("#scoreX");
+let scoreO = document.querySelector("#scoreO");
+
+let playerX = 0;    //X
+let playerO = 0;    //O
 
 playerTurn.innerText = `O TURN`;
+
+let X = localStorage.getItem(`X`);
+scoreX.innerText = `X: ${X}`;
+let O = localStorage.getItem(`O`);
+scoreO.innerText = `O: ${O}`;
 
 //row 1
 hd[0].append(btn0);
@@ -63,10 +73,18 @@ const logic = (obj) => {
 //Checking Winner
 const checkWinner = () => {
     if(btn0.innerText === `X` && btn1.innerText === `X` && btn2.innerText === `X` || btn3.innerText === `X` && btn4.innerText === `X` && btn5.innerText === `X` || btn6.innerText === `X` && btn7.innerText === `X` && btn8.innerText === `X` || btn0.innerText === `X` && btn3.innerText === `X` && btn6.innerText === `X` || btn1.innerText === `X` && btn4.innerText === `X` && btn7.innerText === `X` || btn2.innerText === `X` && btn5.innerText === `X` && btn8.innerText === `X` || btn2.innerText === `X` && btn4.innerText === `X` && btn6.innerText === `X` || btn0.innerText === `X` && btn4.innerText === `X` && btn8.innerText === `X` ){
+        playerX = X;
+        playerX++;
+        localStorage.setItem(`X`, `${playerX}`);
+        
         alert("PLAYER X WON!");
         location.reload();
     }
     else if(btn0.innerText === `O` && btn1.innerText === `O` && btn2.innerText === `O` || btn3.innerText === `O` && btn4.innerText === `O` && btn5.innerText === `O` || btn6.innerText === `O` && btn7.innerText === `O` && btn8.innerText === `O` || btn0.innerText === `O` && btn3.innerText === `O` && btn6.innerText === `O` || btn1.innerText === `O` && btn4.innerText === `O` && btn7.innerText === `O` || btn2.innerText === `O` && btn5.innerText === `O` && btn8.innerText === `O` || btn2.innerText === `O` && btn4.innerText === `O` && btn6.innerText === `O` || btn0.innerText === `O` && btn4.innerText === `O` && btn8.innerText === `O` ){
+        playerO = O;
+        playerO++;
+        localStorage.setItem(`O`, `${playerO}`);
+        
         alert("PLAYER O WON!");
         location.reload();
     }
@@ -83,3 +101,5 @@ btn7.addEventListener("click", () => { logic(btn7) });
 btn8.addEventListener("click", () => { logic(btn8) });
 
 reload.addEventListener("click", () => { location.reload() });
+
+
