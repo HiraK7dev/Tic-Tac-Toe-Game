@@ -22,6 +22,7 @@ let playerTurn = document.querySelector("#playerTurn");
 let reload = document.querySelector("#reload"); //reload button
 let scoreX = document.querySelector("#scoreX");
 let scoreO = document.querySelector("#scoreO");
+let resetScore = document.querySelector("#resetScore");
 
 let playerX = 0;    //X
 let playerO = 0;    //O
@@ -30,8 +31,14 @@ playerTurn.innerText = `O TURN`;
 
 let X = localStorage.getItem(`X`);
 scoreX.innerText = `X: ${X}`;
+if(X === null){
+    scoreX.innerText = `X: 0`;
+}
 let O = localStorage.getItem(`O`);
 scoreO.innerText = `O: ${O}`;
+if(O === null){
+    scoreO.innerText = `O: 0`;
+}
 
 //row 1
 hd[0].append(btn0);
@@ -101,5 +108,5 @@ btn7.addEventListener("click", () => { logic(btn7) });
 btn8.addEventListener("click", () => { logic(btn8) });
 
 reload.addEventListener("click", () => { location.reload() });
-
+resetScore.addEventListener("click", () => { localStorage.clear(); location.reload() });
 
