@@ -19,11 +19,9 @@ You can play the game live: https://hirak7dev.github.io/Tic-Tac-Toe-Game/
 ## Setup
 To run this project locally, follow these steps:
 
-1. Clone the repository:
-   git clone https://github.com/your-username/tic-tac-toe.git
+1. Clone the repository
 
-2. Navigate to the project directory:
-   cd tic-tac-toe
+2. Navigate to the project directory
 
 3. Open the `index.html` file in your preferred web browser.
 
