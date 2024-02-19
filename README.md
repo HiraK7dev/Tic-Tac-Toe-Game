@@ -3,7 +3,7 @@
 This project is a simple Tic Tac Toe game created to learn JavaScript and web development fundamentals.
 
 ## Demo
-You can play the game live: https://hirak7dev.github.io/Tic-Tac-Toe-Game/
+You can play the game live here: https://hirak7dev.github.io/Tic-Tac-Toe-Game/
 
 ## Features
 - Classic Tic Tac Toe gameplay.
